@@ -20,4 +20,4 @@
             
 * **Helpful hints**:
     * Kill zombie processes running on port 8080 via this command.
-    * ```kill -kill `lsof -t -i tcp:8080`` `
+    * ```kill -kill `lsof -t -i tcp:8080` ``
