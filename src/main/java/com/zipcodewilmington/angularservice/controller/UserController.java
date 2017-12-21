@@ -22,11 +22,11 @@ public class UserController {
     UserService userService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity list() {
+    public ResponseEntity<User> list() {
         return new ResponseEntity(userService.getAll(), HttpStatus.OK);
     }
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity saveUser(@RequestBody User user) {
+    public ResponseEntity<User> saveUser(@RequestBody User user) {
         User newUser = userService.add(user);
 
         HttpHeaders responseHeaders = new HttpHeaders();
@@ -43,7 +43,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseEntity getUser(@PathVariable Long id) {
+    public ResponseEntity<User> getUser(@PathVariable Long id) {
 
         User user = userService.getById(id);
 
