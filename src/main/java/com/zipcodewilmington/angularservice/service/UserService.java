@@ -5,9 +5,6 @@ import com.zipcodewilmington.angularservice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by leon on 12/21/17.
  */
@@ -35,5 +32,9 @@ public class UserService {
 
     public void remove(Long id) {
         remove(getById(id));
+    }
+
+    public Iterable <User> getAll() {
+        return userRepository.findAll();
     }
 }
